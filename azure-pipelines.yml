@@ -65,9 +65,3 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
-- task: KubernetesManifest@0
-  inputs:
-    action: 'deploy'
-    kubernetesServiceConnection: 'bryce-testing-k8s'
-    namespace: 'bryce-testing-java-app'
-    manifests: 'imagePullSecret'
